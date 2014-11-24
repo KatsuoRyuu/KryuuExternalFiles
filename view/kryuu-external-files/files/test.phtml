@@ -1,0 +1,46 @@
+<?php
+
+$this->headScript()->prependFile('http://code.jquery.com/jquery-2.0.0.js');
+$this->headScript()->appendFile($this->basePath() . '/kryuujsobject/js/' . $sessionID . '/' . $secure);
+
+?>
+<div id="testDiv">
+	
+</div>
+
+<script>
+	
+	var array = Kryuu.Objects.stdClass;
+	
+	console.log(array);
+	if (array instanceof Array) {
+		array.forEach(function(entry) {
+			var div = $('#testDiv')
+			div.append('<p><div id="user">');
+			div.append('Username: ' + entry.username + '</br>');
+			div.append('Username: ' + entry.password + '</br>');
+			div.append('<div id="address">');
+			div.append('address: ' + entry.address.address + '</br>');
+			div.append('zip: ' + entry.address.zip + '</br>');
+			div.append('country: ' + entry.address.country + '</br>');
+			div.append('</div>');
+			div.append('</div></p>');
+			console.log(entry.name);
+		});
+	} 
+	else
+	{
+		var entry = array;
+		var div = $('#testDiv')
+		div.append('<p><div id="user">');
+		div.append('Username: ' + entry.username + '</br>');
+		div.append('Username: ' + entry.password + '</br>');
+		div.append('<div id="address">');
+		div.append('address: ' + entry.address.address + '</br>');
+		div.append('zip: ' + entry.address.zip + '</br>');
+		div.append('country: ' + entry.address.country + '</br>');
+		div.append('</div>');
+		div.append('</div></p>');
+		console.log(entry.name);
+	}
+</script>
