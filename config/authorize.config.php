@@ -56,12 +56,12 @@ return array(
         ),
         'guards' => array(
             'BjyAuthorize\Guard\Controller' => array(
-                //array('controller' => 'KryuuAccount\Account', 'roles' => array('guest','user')), 
+                array('controller' => 'KryuuExternalFiles\Files', 'roles' => array('guest')), 
                 //array('controller' => 'KryuuAccount\Password', 'roles' => array('guest','user')), 
                 //array('controller' => 'KryuuAccount\status', 'roles' => array('guest','user')), 
             ),
             'BjyAuthorize\Guard\Route' => array( 
-                //array('route' => 'zfcuser/password/lost', 'roles' => array('user','guest')),
+                array('route' => 'KryuuExternalFiles/file', 'roles' => array('guest')),
                 //array('route' => 'zfcuser/status', 'roles' => array('user','guest')),
             ),
         ),
